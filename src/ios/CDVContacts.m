@@ -366,7 +366,13 @@
                 }
             } else {
                 foundRecords = (__bridge_transfer NSArray*)ABAddressBookCopyArrayOfAllPeople(addrBook);
-                matches = [NSMutableArray arrayWithCapacity:1];
+                // matches = [NSMutableArray arrayWithCapacity:1];
+                
+                // create Contacts and put into matches array
+                // doesn't make sense to ask for all records when multiple == NO but better check
+                int xferCount = multiple == YES ? (int)[foundRecords count] : 1;
+                matches = [NSMutableArray arrayWithCapacity:xferCount];
+                
                 BOOL bFound = NO;
                 int testCount = (int)[foundRecords count];
 
