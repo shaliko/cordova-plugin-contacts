@@ -23,34 +23,6 @@ matrix:
     osx_image: xcode8.3
     language: node_js
     node_js: '4.2'    
-  - env: PLATFORM=android-4.4
-    os: linux
-    language: android
-    jdk: oraclejdk8
-    android:
-      components:
-      - tools
-  - env: PLATFORM=android-5.1
-    os: linux
-    language: android
-    jdk: oraclejdk8
-    android:
-      components:
-      - tools
-  - env: PLATFORM=android-6.0
-    os: linux
-    language: android
-    jdk: oraclejdk8
-    android:
-      components:
-      - tools
-  - env: PLATFORM=android-7.0
-    os: linux
-    language: android
-    jdk: oraclejdk8
-    android:
-      components:
-      - tools
 before_install:
 - npm cache clean -f
 - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm
